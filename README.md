@@ -1,8 +1,10 @@
 # CS345 - Software Engineering at Ithaca College
-## Project 01 - Bank Software
+## Project 02 - Auction Software
 
 Names:
-<< add 3-4 names here >>
+Keegan 
+Mateo
+Vivek
 
 Link to UML Use Case Diagram:
 << add linkk here >>
