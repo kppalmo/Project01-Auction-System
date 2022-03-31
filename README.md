@@ -6,11 +6,17 @@ Keegan
 Mateo
 Vivek
 
+Link to UML Class Diagram:
+https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=sharing
+
+Scrum Master: Vivek
+
+Sprint 1 goal: Create a basic framework for the auction system.  Have the class diagram updated to the most recent version.  
+
+
 Link to UML Use Case Diagram:
 << add linkk here >>
 
-Link to UML Class Diagram:
-<< add link here >>
 
 Three Use Cases that you will implement first:
 1. -
