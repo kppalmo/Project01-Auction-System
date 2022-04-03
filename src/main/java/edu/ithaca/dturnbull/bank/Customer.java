@@ -6,6 +6,7 @@ public class Customer {
     public Double id;
     public String status;
     public Double balance;
+    public Double bidAmount;
     public Customer (String name, Double id, Double balance, String status){
         this.name = name;
         this.id = id;
