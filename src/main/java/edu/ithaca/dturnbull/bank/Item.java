@@ -2,11 +2,11 @@ package edu.ithaca.dturnbull.bank;
 
 public class Item {
 
-    private double startingBid;
-    private double currBid;
-    private String background;
+    public static double startingBid;
+    public static double currBid;
+    public String background;
 
-    public Item(int startingBidIn, String backgroundIn){
+    public Item(int startingBidIn, String backgroundIn, Double curBid){
         this.startingBid = startingBidIn;
         this.background = backgroundIn;
     }
@@ -18,6 +18,7 @@ public class Item {
     public double getCurrBid(){
         return currBid;
     }
+
 
 
 }
