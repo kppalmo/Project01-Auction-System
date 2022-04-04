@@ -39,7 +39,7 @@ public class Customer {
     //Withdraw bid from item
     public void withdrawBid(Item obj, Double bidAmount){
         if (status == "green"){
-            Item.currBid -= bidAmount;
+            Item.currBid =  (bidAmount - Item.startingBid) - Item.startingBid;
             balance += bidAmount;
 
         }
