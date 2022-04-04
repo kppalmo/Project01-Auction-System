@@ -19,11 +19,12 @@ public class Auction {
     public double getHighestBid(){
         for (Item bid : collectionOfItems.values()){
             for (Customer cust : collectionOfCustomers.values()){
-                if (cust.getBidAmount == bid.getCurrBid()){
+                if (cust.getCustomerBid() == bid.getCurrBid()){
                     return bid.getCurrBid();
                 }
             }
         }
+        return totalBidCount;
         
     }
 

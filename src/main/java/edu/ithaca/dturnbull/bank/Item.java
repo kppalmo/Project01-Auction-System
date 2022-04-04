@@ -6,7 +6,7 @@ public class Item {
     public static double currBid;
     public String background;
 
-    public Item(int startingBidIn, String backgroundIn, Double curBid){
+    public Item(Double startingBidIn, String backgroundIn, Double curBid){
         this.startingBid = startingBidIn;
         this.background = backgroundIn;
     }

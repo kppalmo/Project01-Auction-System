@@ -21,6 +21,11 @@ public class Customer {
         return balance;
     }
 
+    //Getter for customer bid
+    public double getCustomerBid(){
+        return bidAmount;
+    }
+
     //Place bid on Item / checks for status & bidAmount is available 
     public void placeBid(Item obj, Double bidAmount){
         if( status == "green"){
