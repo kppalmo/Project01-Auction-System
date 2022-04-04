@@ -30,7 +30,8 @@ public class Customer {
     public void placeBid(Item obj, Double bidAmount){
         if( status == "green"){
             if(bidAmount <= balance && Item.startingBid <= bidAmount){
-                Item.currBid = bidAmount;
+                //Item.currBid = bidAmount;
+                obj.getBids().push(bidAmount);
                 balance -= bidAmount;
             }
         }
@@ -39,7 +40,8 @@ public class Customer {
     //Withdraw bid from item
     public void withdrawBid(Item obj, Double bidAmount){
         if (status == "green"){
-            Item.currBid =  (bidAmount - Item.startingBid) - Item.startingBid;
+            //Item.currBid =  (bidAmount - Item.startingBid) - Item.startingBid;
+            obj.getBids().pop(bidAmount);
             balance += bidAmount;
 
         }
