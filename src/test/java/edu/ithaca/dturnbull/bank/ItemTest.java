@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ItemTest {
 
     @Test
-    void bidHistoryTest(){
+    void bidHistoryTest() {
         Customer cust = new Customer("Vivek", 24.0, 150.00, "green");
         Item testOBJ = new Item(15.00, "str", 15.00);
 
@@ -24,9 +24,6 @@ public class ItemTest {
         assertEquals(150.00, cust2.getCustomerBalance());
         assertEquals(20.00, testOBJ.getCurrBid());
 
+    }
 
-
-
-    } 
-    
 }

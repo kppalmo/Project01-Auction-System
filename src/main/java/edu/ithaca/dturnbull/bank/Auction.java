@@ -8,26 +8,24 @@ public class Auction {
     private HashMap<Integer, Customer> collectionOfCustomers;
     private int totalBidCount = 0;
 
-    public void increaseBid(){
+    public void increaseBid() {
         totalBidCount++;
     }
 
-    public void decreaseBid(){
+    public void decreaseBid() {
         totalBidCount--;
     }
 
-    public double getHighestBid(){
-        for (Item bid : collectionOfItems.values()){
-            for (Customer cust : collectionOfCustomers.values()){
-                if (cust.getCustomerBid() == bid.getCurrBid()){
+    public double getHighestBid() {
+        for (Item bid : collectionOfItems.values()) {
+            for (Customer cust : collectionOfCustomers.values()) {
+                if (cust.getCustomerBid() == bid.getCurrBid()) {
                     return bid.getCurrBid();
                 }
             }
         }
         return totalBidCount;
-        
+
     }
 
-
-    
 }
