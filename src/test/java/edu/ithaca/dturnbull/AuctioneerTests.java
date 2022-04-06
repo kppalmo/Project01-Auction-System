@@ -6,23 +6,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AuctioneerTests {
 
-    @Test
+@Test
     void auctionStartEndtest() {
         Auctioneer auctioneer=new Auctioneer("auctioneer");
         assertFalse(auctioneer.getAuctionStatus());
         //Start the auction
         auctioneer.startAuction();
-        assertEquals("Auction in progress",auctioneer.getAuctionStatus());
+        assertTrue(auctioneer.getAuctionStatus());
         //End auction
         auctioneer.endAuction();
-        assertEquals("Auction is over",auctioneer.getAuctionStatus());
+        assertFalse(auctioneer.getAuctionStatus());
 } 
 @Test
     void assignBidNumTest() {
-        //Customer customer=new Customer();
+        Customer customer=new Customer("jim",0.250,"green");
         Auctioneer auctioneer=new Auctioneer("auctioneer");
-        //auctioneer.assignBidNum(customer);
-        //assertEquals(customer.getBidNum(),3);
+        assertEquals(auctioneer.assignBidNum(25, customer),customer.id);
     }
 @Test
     void verifyTests() {
@@ -38,7 +37,6 @@ public class AuctioneerTests {
         //auction.getHighestBid();
         //assertTrue(auctioneer.verifyPayment(customer1));
         //assertTrue(auctioneer.verifyBidNumber(customer1));
-
     }
     @Test
     void displayTest() { 
