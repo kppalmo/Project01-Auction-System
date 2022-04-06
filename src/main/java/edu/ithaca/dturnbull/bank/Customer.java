@@ -29,7 +29,7 @@ public class Customer {
     // Place bid on Item / checks for status & bidAmount is available
     public void placeBid(Item obj, Double bidAmount) {
         if (status == "green") {
-            if (bidAmount <= balance && Item.startingBid <= bidAmount) {
+            if (bidAmount <= balance && obj.getCurrBid() < bidAmount) {
                 // Item.currBid = bidAmount;
                 obj.getBids().push(bidAmount);
                 balance -= bidAmount;
