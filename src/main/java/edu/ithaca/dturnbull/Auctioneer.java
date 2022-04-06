@@ -3,7 +3,13 @@ package edu.ithaca.dturnbull;
 import java.util.Random;
 
 public class Auctioneer {
+    private String name;
+    
+    public Auctioneer(String name){
+        this.name=name;
+    }
 
+    //determines if the auction is happening or not
     public String auctionStatus="";
 
     public void displayBid(){
@@ -18,6 +24,7 @@ public class Auctioneer {
         //Random rand=new Random();
         //int bidNum=rand.nextInt(numCustomers);
     }
+
     //Params: n/a
     //Purpose: To end the auction
     //Returns: void
