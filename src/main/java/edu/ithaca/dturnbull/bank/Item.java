@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Item {
 
-    public static double startingBid;
+    public double startingBid;
     // public static double currBid;
     Stack<Double> bids = new Stack<>();
 
@@ -13,6 +13,7 @@ public class Item {
     public Item(Double startingBidIn, String backgroundIn, Double curBid) {
         this.startingBid = startingBidIn;
         this.background = backgroundIn;
+        bids.push(startingBid);
     }
 
     public double getStartingBid() {
