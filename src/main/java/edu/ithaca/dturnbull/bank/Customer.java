@@ -41,7 +41,7 @@ public class Customer {
     public void withdrawBid(Item obj, Double bidAmount){
         if (status == "green"){
             //Item.currBid =  (bidAmount - Item.startingBid) - Item.startingBid;
-            obj.getBids().pop(bidAmount);
+            obj.getBids().pop();
             balance += bidAmount;
 
         }
