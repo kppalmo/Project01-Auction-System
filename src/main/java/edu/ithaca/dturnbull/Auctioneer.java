@@ -21,8 +21,9 @@ public class Auctioneer {
     //Returns: void
 
     public void assignBidNum(int numCustomers){//Customer customer){
-        //Random rand=new Random();
-        //int bidNum=rand.nextInt(numCustomers);
+        Random rand=new Random();
+        int bidNum=rand.nextInt(numCustomers);
+        Customer.id=bidNum;
     }
 
     //Params: n/a
