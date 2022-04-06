@@ -1,3 +1,4 @@
+
 package edu.ithaca.dturnbull;
 
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,7 @@ public class AuctioneerTests {
     @Test
     void auctionStartEndtest() {
         Auctioneer auctioneer=new Auctioneer("auctioneer");
-        assertEquals("",auctioneer.getAuctionStatus());
+        assertFalse(auctioneer.getAuctionStatus());
         //Start the auction
         auctioneer.startAuction();
         assertEquals("Auction in progress",auctioneer.getAuctionStatus());
