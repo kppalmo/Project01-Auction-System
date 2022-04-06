@@ -30,7 +30,6 @@ public class Customer {
     public void placeBid(Item obj, Double bidAmount) {
         if (status == "green") {
             if (bidAmount <= balance && obj.getCurrBid() < bidAmount) {
-                // Item.currBid = bidAmount;
                 obj.getBids().push(bidAmount);
                 balance -= bidAmount;
             }
@@ -40,9 +39,13 @@ public class Customer {
     // Withdraw bid from item
     public void withdrawBid(Item obj, Double bidAmount) {
         if (status == "green") {
-            // Item.currBid = (bidAmount - Item.startingBid) - Item.startingBid;
-            obj.getBids().pop();
-            balance += bidAmount;
+            if (obj.getBids().size() > 1) {
+                obj.getBids().pop();
+                balance += bidAmount;
+            }
+            else{
+                throw new IllegalArgumentException("Cannot withdraw any further.");
+            }
 
         }
 
