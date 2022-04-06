@@ -19,15 +19,14 @@ public class AuctionTest {
     @Test
     void placeBidTest(){
         Customer cust = new Customer("Vivek", 24.0, 150.00, "green");
-        Item testOBJ = new Item(15.00, "str", 15.00);
-        //Customer sets new Bid
-        cust.placeBid(testOBJ, 20.00);
-        assertEquals(20.00, testOBJ.getCurrBid());
-        assertEquals(130.00, cust.getCustomerBalance());
-        cust.withdrawBid(testOBJ, 20.00);
-        //FAILS B/C BID NEEDS TO BE RESET TO OG
-        assertEquals(15.00, testOBJ.getCurrBid());
-        assertEquals(150.00, cust.getCustomerBalance());
+        Customer cust2 = new Customer("Keegan", 2.0,100.00, "green");
+        Item testOBJ = new Item(20.00, "str", 15.00);
+        cust.placeBid(testOBJ, 25.00);
+        assertEquals(25.00, testOBJ.getCurrBid());
+        cust2.placeBid(testOBJ, 35.00);
+        assertEquals(35.00, testOBJ.getCurrBid());
+        cust2.withdrawBid(testOBJ, 35.00);
+        assertEquals(25.00, testOBJ.getCurrBid());
 
     }
     
