@@ -27,11 +27,14 @@ public class Customer {
     }
 
     // Place bid on Item / checks for status & bidAmount is available
-    public void placeBid(Item obj, Double bidAmount) {
+    public void placeBid(Item obj, Double bidAmount) throws InsufficientFundsException {
         if (status == "green") {
             if (bidAmount <= balance && obj.getCurrBid() < bidAmount) {
                 obj.getBids().push(bidAmount);
                 balance -= bidAmount;
+            }
+            else{
+                throw new InsufficientFundsException("Your bid cannot be lower than the current bid!");
             }
         }
     }

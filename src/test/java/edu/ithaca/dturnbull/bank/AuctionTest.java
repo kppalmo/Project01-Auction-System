@@ -16,7 +16,7 @@ public class AuctionTest {
 
     // Tests to check place bid on Item
     @Test
-    void placeBidTest() {
+    void placeBidTest() throws InsufficientFundsException {
         Customer cust = new Customer("Vivek", 24.0, 150.00, "green");
         Customer cust2 = new Customer("Keegan", 2.0, 100.00, "green");
         Item testOBJ = new Item(20.00, "str", 15.00);
