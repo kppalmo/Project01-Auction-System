@@ -41,7 +41,8 @@ public class Auctioneer {
     //Params: Auction auction
     //Purpose: To display the item that is being auctioned
     //Returns: the item being auctioned
-    public void displayItem(){//Auction auction){
+    public void displayItem(Item item){
+        return item;
         
     }
 
@@ -52,7 +53,7 @@ public class Auctioneer {
         auctionStatus=true;
     }
 
-    //Params: (Customer///)
+    //Params: Customer
     //Purpose: To verify the payment of the highest bidding customer
     //Returns: True if payment is verified, false if not
     public Boolean verifyPayment(Customer customer){//Customer customer){//
@@ -66,7 +67,7 @@ public class Auctioneer {
     //Purpose: To verify the bid number of the highest bidding customer
     //Returns: True if bid number is verified, false if not
     public Boolean verifyBidNumber(Customer customer, int bidNum){//Customer customer){//
-        if(customer.getBidNum()==bidNum){
+        if(customer.getBidNum==bidNum){
             return true;
         }
         return false;
@@ -75,6 +76,7 @@ public class Auctioneer {
     //Params: n/a
     //Purpose: To get the status of the auction, if it's over or if it's in progress
     //Returns: String auctionStatus
+    //Can probably add if statements that don't allow customers to make bids and such if auctionStatus is false
     public String getAuctionStatus(){
         return auctionStatus;
     }
