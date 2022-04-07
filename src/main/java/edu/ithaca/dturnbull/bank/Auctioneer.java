@@ -1,4 +1,4 @@
-package edu.ithaca.dturnbull;
+package edu.ithaca.dturnbull.bank;
 
 import java.util.Random;
 
