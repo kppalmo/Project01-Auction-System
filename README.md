@@ -13,23 +13,11 @@ Scrum Master: Vivek
 
 Sprint 1 goal: Create a basic framework for the auction system.  Have the class diagram updated to the most recent version.  
 
+Sprint Review Demo link:
+https://docs.google.com/document/d/1yBEIMuuukhtWDpmTC953mmkDz3cmtJVSE5Pj2ClJL04/edit?usp=sharing
 
 Link to UML Use Case Diagram:
-<< add linkk here >>
-
-
-Three Use Cases that you will implement first:
-1. -
-2. - 
-3. - 
-
-Which classes & methods do you need to implement for these use cases?
-(Indicated which team member is responsible for the implemenation)
-1. -
-2. -
-3. -
-4. -
-5. << add more as needed >>
+<< add link here >>
 
 Don't forget to use Test-Driven Development (TDD)
 1. Write Class and Method Function Headers
