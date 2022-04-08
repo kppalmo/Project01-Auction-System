@@ -9,7 +9,7 @@ public class Auctioneer {
         this.name=name;
     }
 
-    //if true, auction is in progress, if false auction is not in progress
+    //if true, auction is in progress, if false, auction is not in progress
     public Boolean auctionStatus=false;
     
 
@@ -30,6 +30,7 @@ public class Auctioneer {
         customer.id=bidNum;
         return bidNum;
     }
+    //make sure the id is unique each time so customers don't have repeating bidId possibly make it sequential instead
 
     //Params: n/a
     //Purpose: To end the auction
@@ -63,7 +64,7 @@ public class Auctioneer {
         return false;
     } 
 
-    //Params: (Customer///)
+    //Params: (Customer,bidNum)
     //Purpose: To verify the bid number of the highest bidding customer
     //Returns: True if bid number is verified, false if not
     public Boolean verifyBidNumber(Customer customer, int bidNum){//Customer customer){//
@@ -75,9 +76,9 @@ public class Auctioneer {
 
     //Params: n/a
     //Purpose: To get the status of the auction, if it's over or if it's in progress
-    //Returns: String auctionStatus
+    //Returns: Boolean auctionStatus
     //Can probably add if statements that don't allow customers to make bids and such if auctionStatus is false
-    public String getAuctionStatus(){
+    public Boolean getAuctionStatus(){
         return auctionStatus;
     }
     

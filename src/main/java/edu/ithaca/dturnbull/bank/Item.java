@@ -1,24 +1,31 @@
 package edu.ithaca.dturnbull.bank;
 
+import java.util.Stack;
+
 public class Item {
 
-    public static double startingBid;
-    public static double currBid;
+    public double startingBid;
+    // public static double currBid;
+    Stack<Double> bids = new Stack<>();
+
     public String background;
 
-    public Item(Double startingBidIn, String backgroundIn, Double curBid){
+    public Item(Double startingBidIn, String backgroundIn, Double curBid) {
         this.startingBid = startingBidIn;
         this.background = backgroundIn;
+        bids.push(startingBid);
     }
 
-    public double getStartingBid(){
+    public double getStartingBid() {
         return startingBid;
     }
 
-    public double getCurrBid(){
-        return currBid;
+    public Stack<Double> getBids() {
+        return bids;
     }
 
-
+    public double getCurrBid() {
+        return bids.peek();
+    }
 
 }

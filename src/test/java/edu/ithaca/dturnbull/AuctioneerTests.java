@@ -27,9 +27,9 @@ public class AuctioneerTests {
     void verifyTests() {
         //Auction auction=new Auction(itemList);
         Auctioneer auctioneer=new Auctioneer("auctioneer");
-        Item cup = new Item(30.00, "str", 40.00);
+        Item cup = new Item(10.00, "str", 15.00);
         Customer customer1=new Customer("jim", 34.0, 150.00, "green");
-        Customer customer2=new Customer("jam", 34.0, 200.00, "green");
+        Customer customer2=new Customer("jam", 35.0, 200.00, "green");
         auctioneer.startAuction();
         customer1.placeBid(cup, 20.00);;
         customer2.placeBid(cup, 25.00);
@@ -42,7 +42,10 @@ public class AuctioneerTests {
     @Test
     void displayTest() { 
     //Auction auction=new Auction(itemList);
-     Auctioneer auctioneer=new Auctioneer("auctioneer"); 
-     //assertEquals(item,auctioneer.displayItem());
+     Auctioneer auctioneer=new Auctioneer("auctioneer");
+     Customer customer1=new Customer("jon", 34.0, 150.00, "green"); 
+     Item chair = new Item(10.00, "str", 15.00);
+     customer1.placeBid(chair, 20.00);;
+     assertEquals(20.00,auctioneer.displayBid());
 }
 }
