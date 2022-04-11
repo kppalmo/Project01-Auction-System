@@ -10,13 +10,13 @@ Link to UML Class Diagram:
 https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=sharing
 
 Scrum Master: Vivek
-
+Sprint 1:
 Sprint 1 goal: Create a basic framework for the auction system.  Have the class diagram updated to the most recent version.  
 
-Sprint Review Demo link:
+Sprint 1: Review Demo link:
 https://docs.google.com/document/d/1yBEIMuuukhtWDpmTC953mmkDz3cmtJVSE5Pj2ClJL04/edit?usp=sharing
 
-Retrospective Document:
+Sprint 1: Retrospective Document:
 https://docs.google.com/document/d/18VCJ3PkutMbXwaHfRJ_2FLspn3CSQ4Ak-9NexlejfaA/edit?usp=sharing
 
 Link to UML Use Case Diagram:
