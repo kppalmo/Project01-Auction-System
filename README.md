@@ -20,6 +20,10 @@ https://docs.google.com/document/d/1yBEIMuuukhtWDpmTC953mmkDz3cmtJVSE5Pj2ClJL04/
 Sprint 1: Retrospective Document:
 https://docs.google.com/document/d/18VCJ3PkutMbXwaHfRJ_2FLspn3CSQ4Ak-9NexlejfaA/edit?usp=sharing
 
+Sprint 2: 
+Link to UML Class Diagram:
+https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=sharing
+
 Link to UML Use Case Diagram:
 << add link here >>
 
