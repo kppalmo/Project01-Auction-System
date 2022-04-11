@@ -11,6 +11,7 @@ https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=shari
 
 Scrum Master: Vivek
 Sprint 1:
+
 Sprint 1 goal: Create a basic framework for the auction system.  Have the class diagram updated to the most recent version.  
 
 Sprint 1: Review Demo link:
