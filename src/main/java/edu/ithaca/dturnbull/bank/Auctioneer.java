@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Auctioneer {
     private String name;
-    
+    static double bidNum=0.0;
     public Auctioneer(String name){
         this.name=name;
     }
@@ -16,17 +16,16 @@ public class Auctioneer {
     //Param: n/a
     //Purpose: to display the current bid
     //return double
-    public double displayBid(){
-        Item.getCurrBid();
+    public double displayBid(Item item){
+        return item.getCurrBid();
     }
 
     //Params: numCustomers(the amount of customers in the auction),Customer 
     //Purpose: To assign a random number to each customer based on the amount of customers in the auction
     //Returns: void
 
-    public int assignBidNum(int numCustomers, Customer customer){//Customer customer){
-        Random rand=new Random();
-        int bidNum=rand.nextInt(numCustomers);
+    public double assignBidNum(Customer customer){//Customer customer){
+        bidNum+=1;
         customer.id=bidNum;
         return bidNum;
     }
@@ -37,12 +36,13 @@ public class Auctioneer {
     //Returns: void
     public void endAuction(){
         auctionStatus=false;
+        bidNum=0.0;
     }
 
     //Params: Auction auction
     //Purpose: To display the item that is being auctioned
     //Returns: the item being auctioned
-    public void displayItem(Item item){
+    public Item displayItem(Item item){
         return item;
         
     }
@@ -57,8 +57,8 @@ public class Auctioneer {
     //Params: Customer
     //Purpose: To verify the payment of the highest bidding customer
     //Returns: True if payment is verified, false if not
-    public Boolean verifyPayment(Customer customer){//Customer customer){//
-        if(Customer.getCustomerBalance()>=Auction.getHighestBid()){
+    public Boolean verifyPayment(Customer customer, Auction auction){//Customer customer){//
+        if(customer.getCustomerBalance()>=auction.getHighestBid()){
             return true;
         }
         return false;
@@ -67,8 +67,8 @@ public class Auctioneer {
     //Params: (Customer,bidNum)
     //Purpose: To verify the bid number of the highest bidding customer
     //Returns: True if bid number is verified, false if not
-    public Boolean verifyBidNumber(Customer customer, int bidNum){//Customer customer){//
-        if(customer.getBidNum==bidNum){
+    public Boolean verifyBidNumber(Customer customer, double d){//Customer customer){//
+        if(customer.getCustomerId()==d){
             return true;
         }
         return false;

@@ -21,6 +21,10 @@ public class Customer {
         return balance;
     }
 
+    public double getCustomerId(){
+        return id;
+    }
+
     // Getter for customer bid
     public double getCustomerBid() {
         return bidAmount;
