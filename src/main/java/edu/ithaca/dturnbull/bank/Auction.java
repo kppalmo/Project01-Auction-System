@@ -6,6 +6,8 @@ public class Auction {
 
     private HashMap<Integer, Item> collectionOfItems;
     private HashMap<Integer, Customer> collectionOfCustomers;
+    private HashMap<Integer, Customer> blackList;
+
     private int totalBidCount = 0;
 
     public void increaseBid() {
@@ -27,5 +29,16 @@ public class Auction {
         return totalBidCount;
 
     }
+
+
+    public void addToBlacklist(){
+        for (Customer cust : collectionOfCustomers.values()){
+            if( cust.getCustomerBid() > cust.getCustomerBalance()){
+                blackList.put(1, cust);
+            }
+        }
+    }
+
+
 
 }
