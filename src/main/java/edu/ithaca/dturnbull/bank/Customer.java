@@ -73,20 +73,6 @@ public class Customer {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //public void viewItems(Auction auction){
       //  for (Integer item: Auction.collectionOfItems.keySet()) {
         //    System.out.println(item);
