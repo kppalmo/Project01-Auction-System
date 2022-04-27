@@ -7,8 +7,8 @@ public class ItemTest {
 
     @Test
     void bidHistoryTest() throws InsufficientFundsException{
-        Customer cust = new Customer("Vivek", 24.0, 150.00, "green");
-        Item testOBJ = new Item(15.00, "str", 15.00);
+        Customer cust = new Customer("Vivek", 24.0, 150.00, "green",true);
+        Item testOBJ = new Item("test",15.00, "str", 15.00,0);
 
         // check that the first bid in the stack is the starting bid
         assertEquals(15.00, testOBJ.getCurrBid()); 
@@ -20,7 +20,7 @@ public class ItemTest {
         assertEquals(20.00, testOBJ.getCurrBid());
         assertEquals(130.00, cust.getCustomerBalance());
 
-        Customer cust2 = new Customer("Keegan", 24.0, 150.00, "green");
+        Customer cust2 = new Customer("Keegan", 24.0, 150.00, "green",true);
 
         cust2.placeBid(testOBJ, 60.00);
         assertEquals(60.00, testOBJ.getCurrBid());

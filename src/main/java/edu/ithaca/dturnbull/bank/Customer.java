@@ -1,5 +1,7 @@
 package edu.ithaca.dturnbull.bank;
 
+import java.util.Collection;
+
 public class Customer {
 
     public String name;
@@ -7,13 +9,15 @@ public class Customer {
     public String status;
     public Double balance;
     public Double bidAmount;
+    public static boolean inAuction;
 
-    public Customer(String name, Double id, Double balance, String status) {
+    public Customer(String name, Double id, Double balance, String status,boolean inAuction) {
         this.name = name;
         this.id = id;
         this.balance = balance;
         // green = can bid red = on blacklist, cannot bid
         this.status = "green";
+        inAuction=false;
     }
 
     // Getter for customer balance
@@ -55,7 +59,42 @@ public class Customer {
             }
 
         }
+    }
+
+    //Let's customer see if they're in the auction
+    public boolean getInAuction(){
+        return inAuction;
+    }
+
+
+    public void viewAllItems(int auctionId){
+        Item item=Auction.collectionOfItems.get(auctionId);
+        System.out.println("Items:"+item);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //public void viewItems(Auction auction){
+      //  for (Integer item: Auction.collectionOfItems.keySet()) {
+        //    System.out.println(item);
+        //}
+        //Collection<String> values= Auction.collectionOfItems.values().toString();
+        //for(String value : values){
+          //  System.out.println( value );
+        //}
+    //}
 
 }
