@@ -5,10 +5,12 @@ import java.util.Map;
 
 public class Auction {
 
+
  //if true, auction is in progress, if false, auction is not in progress
     static boolean auctionStatus;
     static HashMap<Integer, Item> collectionOfItems=new HashMap<Integer,Item>();
     static HashMap<Double, Customer> collectionOfCustomers=new HashMap<Double,Customer>();;
+
     private int totalBidCount = 0;
     static int auctionId;
 
@@ -36,5 +38,22 @@ public class Auction {
         return totalBidCount;
 
     }
+
+
+    public void addToBlacklist(Customer cust){
+            if( cust.getCustomerBid() > cust.getCustomerBalance()){
+                blackList.put(1, cust);
+                cust.status = "red";
+            }
+    
+    }
+    public String checkBlackList(){
+        for(Customer cust : blackList.values()){
+            return cust.name;
+        }
+        return null;
+    }
+
+
 
 }

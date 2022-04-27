@@ -29,4 +29,11 @@ public class AuctionTest {
 
     }
 
+    //Tests to check if customer is on Blacklist / cannot place bid
+    @Test
+    void checkBlackListTest(){
+
+
+    }
+
 }
