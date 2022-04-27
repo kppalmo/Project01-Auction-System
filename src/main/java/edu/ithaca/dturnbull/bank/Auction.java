@@ -1,14 +1,23 @@
 package edu.ithaca.dturnbull.bank;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Auction {
 
-    private HashMap<Integer, Item> collectionOfItems;
-    private HashMap<Integer, Customer> collectionOfCustomers;
-    private HashMap<Integer, Customer> blackList;
+
+ //if true, auction is in progress, if false, auction is not in progress
+    static boolean auctionStatus;
+    static HashMap<Integer, Item> collectionOfItems=new HashMap<Integer,Item>();
+    static HashMap<Double, Customer> collectionOfCustomers=new HashMap<Double,Customer>();;
 
     private int totalBidCount = 0;
+    static int auctionId;
+
+    public Auction(boolean auctionStatus,int auctionId){
+        Auction.auctionStatus=auctionStatus;
+        Auction.auctionId=auctionId;
+    }
 
     public void increaseBid() {
         totalBidCount++;
