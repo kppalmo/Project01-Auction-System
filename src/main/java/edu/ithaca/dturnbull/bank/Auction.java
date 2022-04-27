@@ -31,12 +31,18 @@ public class Auction {
     }
 
 
-    public void addToBlacklist(){
-        for (Customer cust : collectionOfCustomers.values()){
+    public void addToBlacklist(Customer cust){
             if( cust.getCustomerBid() > cust.getCustomerBalance()){
                 blackList.put(1, cust);
+                cust.status = "red";
             }
+    
+    }
+    public String checkBlackList(){
+        for(Customer cust : blackList.values()){
+            return cust.name;
         }
+        return null;
     }
 
 
