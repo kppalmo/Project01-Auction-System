@@ -21,6 +21,8 @@ Sprint 1: Retrospective Document:
 https://docs.google.com/document/d/18VCJ3PkutMbXwaHfRJ_2FLspn3CSQ4Ak-9NexlejfaA/edit?usp=sharing
 
 Sprint 2: 
+Sprint 2 goal: Create and update all diagrams, implement the blacklist, implement more auctioneer methods and work on the overall structure of the program.
+
 Link to UML Class Diagram:
 https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=sharing
 
