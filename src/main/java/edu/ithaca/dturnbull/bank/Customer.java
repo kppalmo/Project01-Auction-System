@@ -16,18 +16,15 @@ public class Customer {
         this.status = "green";
     }
 
-    // Getter for customer balance
-    public double getCustomerBalance() {
-        return balance;
+    // Join a specific auction
+    public void joinAuction(int auctionId){
+        //
+        
     }
 
-    public double getCustomerId(){
-        return id;
-    }
-
-    // Getter for customer bid
-    public double getCustomerBid() {
-        return bidAmount;
+    // Leave a specific auction
+    public void leaveAuction(){
+        
     }
 
     // Place bid on Item / checks for status & bidAmount is available
@@ -53,9 +50,21 @@ public class Customer {
             else{
                 throw new IllegalArgumentException("Cannot withdraw any further.");
             }
-
         }
+    }
 
+    // Getter for customer balance
+    public double getCustomerBalance() {
+        return balance;
+    }
+
+    public double getCustomerId(){
+        return id;
+    }
+
+    // Getter for customer bid
+    public double getCustomerBid() {
+        return bidAmount;
     }
 
 }
