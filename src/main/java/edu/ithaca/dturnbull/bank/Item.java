@@ -10,10 +10,15 @@ public class Item {
     Stack<Double> bids = new Stack<>();
 
     public String background;
+    Double curBid;
+    String name;
 
     public Item(String name,Double startingBidIn, String backgroundIn, Double curBid,int itemNum) {
+        this.name=name;
         this.startingBid = startingBidIn;
         this.background = backgroundIn;
+        this.itemNum=itemNum;
+        this.curBid=curBid;
         bids.push(startingBid);
     }
 
@@ -29,4 +34,7 @@ public class Item {
         return bids.peek();
     }
 
+    public int getItemNum(){
+        return itemNum;
+    }
 }

@@ -8,15 +8,16 @@ public class Auction {
 
  //if true, auction is in progress, if false, auction is not in progress
     static boolean auctionStatus;
-    static HashMap<Integer, Item> collectionOfItems=new HashMap<Integer,Item>();
-    static HashMap<Double, Customer> collectionOfCustomers=new HashMap<Double,Customer>();;
-
+    static HashMap<Integer, Item> collectionOfItems;
+    static HashMap<Double, Customer> collectionOfCustomers;
     private int totalBidCount = 0;
     static int auctionId;
-
+    
     public Auction(boolean auctionStatus,int auctionId){
         Auction.auctionStatus=auctionStatus;
         Auction.auctionId=auctionId;
+        collectionOfItems=new HashMap<Integer,Item>();
+        collectionOfCustomers=new HashMap<Double, Customer>();
     }
 
     public void increaseBid() {
