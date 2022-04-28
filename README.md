@@ -21,13 +21,20 @@ Sprint 1: Retrospective Document:
 https://docs.google.com/document/d/18VCJ3PkutMbXwaHfRJ_2FLspn3CSQ4Ak-9NexlejfaA/edit?usp=sharing
 
 Sprint 2: 
+Scrum Master: Keegan
+
 Sprint 2 goal: Create and update all diagrams, implement the blacklist, implement more auctioneer methods and work on the overall structure of the program.
 
-Link to UML Class Diagram:
+Sprint 2: Review Demo link:
+https://docs.google.com/document/d/1lDOrew_A8ua6VOCIJooKG5jEFV1A_0ET4WAzoKVb1Is/edit?usp=sharing
+
+
+Sprint 2: Retrospective Document:
+
+Link to Class Diagrams:
 https://drive.google.com/file/d/1eCMpXxoQo9gYGBQGJmtHg1iBNdr3kDpA/view?usp=sharing
 
-Link to UML Use Case Diagram:
-<< add link here >>
+
 
 Don't forget to use Test-Driven Development (TDD)
 1. Write Class and Method Function Headers
