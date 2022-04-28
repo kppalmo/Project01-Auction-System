@@ -1,8 +1,9 @@
 package edu.ithaca.dturnbull.bank;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class Customer {
+public class Customer extends Auction{
 
     public String name;
     public Double id;
@@ -10,14 +11,19 @@ public class Customer {
     public Double balance;
     public Double bidAmount;
     public static boolean inAuction;
+    static String items;
+    static ArrayList<String> itemsInAuction;
 
     public Customer(String name, Double id, Double balance, String status,boolean inAuction) {
+        super(inAuction, auctionId);
         this.name = name;
         this.id = id;
         this.balance = balance;
         // green = can bid red = on blacklist, cannot bid
         this.status = "green";
         inAuction=false;
+        items="";
+        itemsInAuction=new ArrayList<String>();
     }
 
     // Getter for customer balance
@@ -36,7 +42,8 @@ public class Customer {
 
     // Place bid on Item / checks for status & bidAmount is available
     public void placeBid(Item obj, Double bidAmount) throws InsufficientFundsException {
-        if (status == "green") {
+        if(id!=null){
+        if (status == "green" && auctionStatus==true) {
             if (bidAmount <= balance && obj.getCurrBid() < bidAmount) {
                 obj.getBids().push(bidAmount);
                 balance -= bidAmount;
@@ -45,11 +52,13 @@ public class Customer {
                 throw new InsufficientFundsException("Your bid cannot be lower than the current bid!");
             }
         }
+        }
     }
 
     // Withdraw bid from item
     public void withdrawBid(Item obj, Double bidAmount) {
-        if (status == "green") {
+        if(id!=null){
+        if (status == "green" && auctionStatus==true) {
             if (obj.getBids().size() > 1) {
                 obj.getBids().pop();
                 balance += bidAmount;
@@ -60,6 +69,7 @@ public class Customer {
 
         }
     }
+    }
 
     //Let's customer see if they're in the auction
     public boolean getInAuction(){
@@ -68,8 +78,7 @@ public class Customer {
 
 
     public void viewAllItems(int auctionId){
-        Item item=Auction.collectionOfItems.get(auctionId);
-        System.out.println("Items:"+item);
+        System.out.println(itemsInAuction.get(auctionId));
 
     }
 
