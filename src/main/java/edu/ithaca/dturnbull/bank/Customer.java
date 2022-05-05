@@ -94,8 +94,7 @@ public class Customer extends Auction{
 
 
 
-
-
+    
 
     //public void viewItems(Auction auction){
       //  for (Integer item: Auction.collectionOfItems.keySet()) {

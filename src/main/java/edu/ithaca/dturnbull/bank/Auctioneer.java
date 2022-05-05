@@ -17,15 +17,6 @@ public class Auctioneer extends Auction{
         this.currentItem=0;
     }
 
-    //be able to create a collection of auctions
-    //Auction constructor(id, status)
-    //add item
-    //remove item
-    //create collections of auction class                      
-    //hashmap for collection of auctions
-    //add customer to the auction
-    //remove customer from auction
-
     //Param: Item item
     //Purpose: to display the current bid
     //return double
@@ -80,15 +71,17 @@ public class Auctioneer extends Auction{
         Auction i=new Auction(false, auctionId);
         auctionStatus=true;
         
-        //Assigns every customer in the auction an id
+        //Puts the created auction in the collecction of auctions based on auction id
         CollectionOfAuctions.collectionOfAuctions.put(auctionId,i);
+        //Assigns every customer in the auction an id
         for(Double j:collectionOfCustomers.keySet()){
             assignBidNum(collectionOfCustomers.get(j));
         }
         
-        for(Double k:collectionOfCustomers.keySet()){
-            System.out.println(collectionOfCustomers.get(k).name);
-        }
+        //To print out the list of customers that are in the auction
+        //for(Double k:collectionOfCustomers.keySet()){
+            //System.out.println(collectionOfCustomers.get(k).name);
+        //}
     }
 
 
@@ -119,6 +112,8 @@ public class Auctioneer extends Auction{
     public Boolean getAuctionStatus(){
         return auctionStatus;
     }
+
+
      //Params: StartingBid, backgroundIn, curBid
     //Purpose: To create an item object that is going to be auctioned. Increment the itemNum variable
     //Returns: Item

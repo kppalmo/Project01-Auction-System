@@ -74,9 +74,7 @@ auctioneer.createItem("broom",20.00, "made in 2000", 20.00);
 @Test
 void addRemoveItemTest(){
     Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-    Customer customer=new Customer("Jim", 1.00, 100.00, "green", true);
     auctioneer.startAuction(0);
-    //need to fix this test
     auctioneer.createItem("hat",12.00, "newEra", 25.00);
     auctioneer.createItem("cat",10.00, "persian", 10.00);
     
@@ -94,23 +92,25 @@ void addRemoveItemTest(){
 void itemListTest(){
     Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
     Customer customer=new Customer("Jim", 1.00, 100.00, "green", true);
-    auctioneer.startAuction(0);
-    //need to fix this test
+ 
     auctioneer.createItem("hat",12.00, "newEra", 25.00);
     auctioneer.createItem("cat",10.00, "persian", 10.00);
-    auctioneer.endAuction(0);
     auctioneer.auctionItemList(0);
-    customer.viewAllItems(0);
+    auctioneer.startAuction(0);
+   
+
     //Should print
     //Item name: hat Starting bid: 12.0 Background: newEra Current bid: 25.0 Item num: 1 Item name: cat Starting bid: 10.0 Background: persian Current bid: 10.0 Item num: 2 
-
-    auctioneer.startAuction(1);
+    customer.viewAllItems(0);
+    auctioneer.endAuction(0);
+  
     auctioneer.createItem("clock",35.00, "Old Wooden Clock", 35.00);
-    auctioneer.endAuction(1);
     auctioneer.auctionItemList(1);
-    customer.viewAllItems(1);
+    auctioneer.startAuction(1);
     //Should print
     //Item name: clock Starting bid: 35.0 Background: Old Wooden Clock Current bid: 35.0 Item num: 1 
+    customer.viewAllItems(1);
+    auctioneer.startAuction(1);
 
 
 }
