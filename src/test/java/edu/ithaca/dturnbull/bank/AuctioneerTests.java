@@ -114,15 +114,5 @@ void itemListTest(){
 
 
 }
-@Test
-void addCustomerandBidTest(){
-    Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-    Customer customer=new Customer("Jim", 1.00, 100.00, "green", true);
-    Customer customer2=new Customer("Jam", 1.00, 100.00, "green", true);
-    auctioneer.addCustomer(customer,0);
-    auctioneer.addCustomer(customer2,0);
-    auctioneer.startAuction(0);
-
-}
 
 }
