@@ -80,8 +80,11 @@ void addRemoveItemTest(){
     auctioneer.withdrawItem(4, 1);
     //Should be null after the items get withdrawn
     assertEquals(null,auctioneer.getCurrentItem(4));
+
     
 }
+
+
 
 
 }
