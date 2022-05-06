@@ -54,31 +54,6 @@ public class Auctioneer{
         CollectionOfAuctions.getCollectionOfAuctions().get(auctionId).getCollectionOfCustomers().remove(customer.getCustomerId(), customer);
     }
 
-
-
-     //Params: StartingBid, backgroundIn, curBid
-    //Purpose: To create an item object that is going to be auctioned. Increment the itemNum variable
-    //Returns: Item
-    public Item createItem(String name,Double startingBidIn, String backgroundIn, Double curBid){
-        Item item=new Item(name, startingBidIn,backgroundIn,curBid,itemNum);
-        itemNum+=1;
-        collectionOfItems.put(item.getItemNum(),item);
-
-        //To see the key value pairs
-        //for (int i : collectionOfItems.keySet()) {
-          //  System.out.println("key: " + i + " value: " + collectionOfItems.get(i));
-          //}
-          
-          //Updates item list
-          Customer.items+=
-          "Item name: "+name + 
-          " Starting bid: " + startingBidIn.toString()+
-          " Background: " + backgroundIn+
-          " Current bid: " + curBid.toString()+
-          " Item num: "+ itemNum+" ";
-          
-        return item;
-
     public double displayBid(Item item){
         return item.getCurrBid();
     }
