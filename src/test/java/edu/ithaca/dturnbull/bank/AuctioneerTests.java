@@ -8,111 +8,83 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AuctioneerTests {
 
 @Test
-    void auctionStartEndtest() {
-        Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-        auctioneer.createItem("cup", 10.00, "glass cup", 15.00);
-        auctioneer.createItem("chair", 10.00, "wooden chair", 15.00);
-        auctioneer.createItem("fan", 10.00, "old fan", 15.00);
+    public void auctionStartEndtest() {
+        Auctioneer auctioneer = new Auctioneer("jim", 25);
 
         //Start the auction
-        auctioneer.startAuction(0);
-        assertTrue(auctioneer.getAuctionStatus());
+        auctioneer.startAuction(25,0,"Auction 0");
+
+
+        auctioneer.placeItem(0, "cup", 500.00, "Porcelain cup");
+        auctioneer.placeItem(0, "chair", 250.00, " wooden chair");
+        auctioneer.placeItem(0, "fan", 100.00, " old fan");
+        
+        //True because the auction is in progress
+        assertTrue(auctioneer.getAuctionStatus(0));
         //End auction
-        auctioneer.endAuction(1);
-        assertFalse(auctioneer.getAuctionStatus());
+        auctioneer.endAuction(0);
+        //False because the auction ended
+        assertFalse(auctioneer.getAuctionStatus(0));
 } 
 @Test
     void assignBidNumTest() {
-        Customer customer=new Customer("jim",0.0,250.0,"green",true);
-        Customer customer2=new Customer("jam",0.0,250.0,"green",true);
-        Customer customer3=new Customer("joe",0.0,250.0,"green",true);
+        //Create 3 customers
+        Customer customer1 = new Customer("jim", 0, 900.0, "green");
+        Customer customer2 = new Customer("jam", 0, 900.0, "green");
+        Customer customer3 = new Customer("joe", 0, 900.0, "green");
 
-        Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-        auctioneer.assignBidNum(customer2);
-        auctioneer.assignBidNum(customer3);
-        assertEquals(auctioneer.assignBidNum(customer),customer.id);
+        Auctioneer auctioneer = new Auctioneer("jim", 25);
+        auctioneer.startAuction(25,1,"Auction 1");
 
-        assertEquals(1.0,customer2.id);
-        assertEquals(2.0,customer3.id);
+        auctioneer.addCustomer(customer1, 1);
+        auctioneer.addCustomer(customer2, 1);
+        auctioneer.addCustomer(customer3, 1);
+        //Make sure they all received the write id's
+        assertEquals(customer1.id,1);
+        assertEquals(customer2.id,2);
+        assertEquals(customer3.id,3);
     }
 @Test
-        //Need to fix tests
-    void verifyTests() throws InsufficientFundsException {
-        Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
+    void currentBid() throws InsufficientFundsException {
+        Auctioneer auctioneer = new Auctioneer("jim", 25);
+        auctioneer.startAuction(25,2,"Auction 2");
 
-        auctioneer.createItem("cup", 10.00, "glass cup", 15.00);
-        Item cup = new Item("cup",10.00, "glass cup", 15.00, 0);
-        Customer customer1=new Customer("jim", 34.0, 150.00, "green",true);
-        Customer customer2=new Customer("jam", 35.0, 200.00, "green",true);
-        auctioneer.startAuction(0);
-        customer1.placeBid(cup, 20.00);;
-        customer2.placeBid(cup, 25.00);
-        customer1.placeBid(cup, 30.00);
-        auctioneer.endAuction(1);
-        //auction.getHighestBid();
-        //assertTrue(auctioneer.verifyPayment(customer1, auction));
-        //assertTrue(auctioneer.verifyBidNumber(customer1,34.0));
+        auctioneer.placeItem(2, "plate", 500.00, "Porcelain plate");
+        Customer customer1 = new Customer("jim", 0, 900.0, "green");
+        Customer customer2 = new Customer("jam", 0, 900.0, "green");
+
+        customer1.placeBid(auctioneer.getCurrentItem(2),  550.00, 2, 1);
+        customer2.placeBid(auctioneer.getCurrentItem(2),  600.00, 2, 2);
+        auctioneer.endAuction(2);
+        //Should equal the current highest bid 
+        assertEquals(600.00,auctioneer.getCurrentItem(2).getCurrBid());
     }
 @Test
     void displayTest() throws InsufficientFundsException { 
-    //Auction auction=new Auction(itemList);
-     Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-     Customer customer1=new Customer("jon", 34.0, 150.00, "green", true); 
-     Item chair = new Item("shoe",10.00, "nike", 15.00, 1);
-     customer1.placeBid(chair, 20.00);;
-     assertEquals(20.00,auctioneer.displayBid(chair));
+    Auctioneer auctioneer = new Auctioneer("jim", 25);
+    auctioneer.startAuction(25,3,"Auction 3");
+    Customer customer1 = new Customer("jam", 0, 900.0, "green");
+     auctioneer.placeItem(3, "shoe", 160.00, "royal toe");
+     customer1.placeBid(auctioneer.getCurrentItem(3),  220.00, 2, 1);
+     //Auctioneer should be able to display the current highest bid
+     assertEquals(220.00,auctioneer.displayBid(auctioneer.getCurrentItem(3)));
 }
-@Test
-void createItemTest(){
-Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-auctioneer.createItem("cat",5.00, "persian", 5.00);
-auctioneer.createItem("chair",15.00, "wooden chair", 15.00);
-auctioneer.createItem("broom",20.00, "made in 2000", 20.00);
 
-
-}
 @Test
 void addRemoveItemTest(){
-    Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-    auctioneer.startAuction(0);
-    auctioneer.createItem("hat",12.00, "newEra", 25.00);
-    auctioneer.createItem("cat",10.00, "persian", 10.00);
-    
-    assertEquals(auctioneer.createItem("cup",10.00, "plastic cup", 20.00),Auction.collectionOfItems.get(2));
-    assertEquals(auctioneer.createItem("phone",100.00, "nokia", 100.00),Auction.collectionOfItems.get(3));
-    auctioneer.removeItem(2);
-    assertEquals(null,Auction.collectionOfItems.get(2));
-    auctioneer.removeItem(1);
-    assertEquals(null,Auction.collectionOfItems.get(1));
-    
+    Auctioneer auctioneer = new Auctioneer("jim", 25);
+    auctioneer.startAuction(25,4,"Auction 4");
+    auctioneer.placeItem(4, "hat", 80.00, "newEra");
+    auctioneer.placeItem(4, "cat", 50.00, "persian");
+    auctioneer.withdrawItem(4, 0);
+    auctioneer.withdrawItem(4, 1);
+    //Should be null after the items get withdrawn
+    assertEquals(null,auctioneer.getCurrentItem(4));
 
+    
 }
 
-@Test
-void itemListTest(){
-    Auctioneer auctioneer=new Auctioneer("auctioneer",null,0);
-    Customer customer=new Customer("Jim", 1.00, 100.00, "green", true);
- 
-    auctioneer.createItem("hat",12.00, "newEra", 25.00);
-    auctioneer.createItem("cat",10.00, "persian", 10.00);
-    auctioneer.auctionItemList(0);
-    auctioneer.startAuction(0);
-   
-
-    //Should print
-    //Item name: hat Starting bid: 12.0 Background: newEra Current bid: 25.0 Item num: 1 Item name: cat Starting bid: 10.0 Background: persian Current bid: 10.0 Item num: 2 
-    customer.viewAllItems(0);
-    auctioneer.endAuction(0);
-  
-    auctioneer.createItem("clock",35.00, "Old Wooden Clock", 35.00);
-    auctioneer.auctionItemList(1);
-    auctioneer.startAuction(1);
-    //Should print
-    //Item name: clock Starting bid: 35.0 Background: Old Wooden Clock Current bid: 35.0 Item num: 1 
-    customer.viewAllItems(1);
-    auctioneer.startAuction(1);
 
 
-}
 
 }
